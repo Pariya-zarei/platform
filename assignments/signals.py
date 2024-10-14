@@ -14,7 +14,7 @@ def notify_students_on_assignment_update(sender, instance, created, **kwargs):
     else:
         message = f"The assignment {instance.title} has been updated in your course {course.name}."
 
-    recipients = [student.email for student in course.student_set.all()]  # Assuming you have a related field for students in the Course model
+    recipients = [student.email for student in course.student_set.all()]  #با فرض اینکه یک رشته مرتبط برای دانشجویان در مدل دوره داری
 
     send_mail(
         subject,
